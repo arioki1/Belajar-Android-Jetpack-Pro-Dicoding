@@ -14,6 +14,12 @@ import com.arioki.belajarandroidjetpackpro.utils.DataDummy.generateDummyCourses
 import kotlinx.android.synthetic.main.fragment_bookmark.*
 
 class BookmarkFragment : Fragment(), BookmarkFragmentCallback {
+    companion object {
+        fun newInstance(): BookmarkFragment {
+            return BookmarkFragment()
+        }
+    }
+
     lateinit var adapter: BookmarkAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

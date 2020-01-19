@@ -26,14 +26,8 @@ class DetailCourseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail_course)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        intent.extras?.let {
-            val courseId = it.getString(EXTRA_COURSE)
-            if (courseId != null) {
-                adapter.setModules(generateDummyModules(courseId))
-                populateCourse(courseId)
-            }
-        }
         adapter = DetailCourseAdapter()
+
         rv_module.isNestedScrollingEnabled = false
         rv_module.layoutManager = LinearLayoutManager(this)
         rv_module.setHasFixedSize(true)
@@ -41,6 +35,14 @@ class DetailCourseActivity : AppCompatActivity() {
         val dividerItemDecoration =
             DividerItemDecoration(rv_module.context, DividerItemDecoration.VERTICAL)
         rv_module.addItemDecoration(dividerItemDecoration)
+
+        intent.extras?.let {
+            val courseId = it.getString(EXTRA_COURSE)
+            if (courseId != null) {
+                adapter.setModules(generateDummyModules(courseId))
+                populateCourse(courseId)
+            }
+        }
 
     }
 

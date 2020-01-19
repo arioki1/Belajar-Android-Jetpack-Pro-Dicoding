@@ -56,8 +56,8 @@ class AcademyAdapter(private val activity: Activity) :
 
     class AcademyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvTitle: TextView = itemView.findViewById(R.id.tv_item_title)
-        var tvDescription: TextView = itemView.findViewById(R.id.img_poster)
-        var tvDate: TextView = itemView.findViewById(R.id.tv_item_description)
-        var imgPoster: ImageView = itemView.findViewById(R.id.tv_item_date)
+        var tvDescription: TextView = itemView.findViewById(R.id.tv_item_description)
+        var tvDate: TextView = itemView.findViewById(R.id.tv_item_date)
+        var imgPoster: ImageView = itemView.findViewById(R.id.img_poster)
     }
 }
