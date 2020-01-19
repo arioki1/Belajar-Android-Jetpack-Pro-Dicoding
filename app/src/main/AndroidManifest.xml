@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".detail.DetailCourse"
+            android:name=".detail.DetailCourseActivity"
             android:label="@string/title_activity_detail_course"
             android:parentActivityName=".home.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
