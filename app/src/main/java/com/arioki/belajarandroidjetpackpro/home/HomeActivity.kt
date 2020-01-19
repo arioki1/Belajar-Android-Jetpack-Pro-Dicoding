@@ -1,6 +1,7 @@
 package com.arioki.belajarandroidjetpackpro.home
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -13,6 +14,9 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 
 class HomeActivity : AppCompatActivity() {
+    companion object{
+        private const val SELECTED_MENU = "selected_menu"
+    }
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item: MenuItem ->
             var fragment: Fragment? = null
@@ -35,5 +39,15 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         nav_view.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        if (savedInstanceState != null) {
+            savedInstanceState.getInt(SELECTED_MENU);
+        } else {
+            nav_view.selectedItemId = R.id.action_home;
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        outState.putInt(SELECTED_MENU, nav_view.selectedItemId);
     }
 }
