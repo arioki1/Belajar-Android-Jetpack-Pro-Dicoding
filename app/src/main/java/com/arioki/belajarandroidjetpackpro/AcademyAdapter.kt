@@ -14,13 +14,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 
-class AcademyAdapter(val activity: Activity) :
+class AcademyAdapter(private val activity: Activity) :
     RecyclerView.Adapter<AcademyAdapter.AcademyViewHolder>() {
     private val mCourses: MutableList<CourseEntity> = ArrayList()
 
     fun getListCourses() = mCourses
     fun setListCourses(listCourses: List<CourseEntity>) {
-        if (listCourses == null) return
         this.mCourses.clear()
         this.mCourses.addAll(listCourses)
     }

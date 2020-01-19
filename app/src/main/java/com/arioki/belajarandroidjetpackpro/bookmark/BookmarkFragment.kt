@@ -2,17 +2,20 @@ package com.arioki.belajarandroidjetpackpro.bookmark
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ShareCompat
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.arioki.belajarandroidjetpackpro.BookmarkAdapter
 import com.arioki.belajarandroidjetpackpro.R
+import com.arioki.belajarandroidjetpackpro.data.CourseEntity
+import com.arioki.belajarandroidjetpackpro.utils.DataDummy.generateDummyCourses
+import kotlinx.android.synthetic.main.fragment_bookmark.*
 
-/**
- * A simple [Fragment] subclass.
- */
-class BookmarkFragment : Fragment() {
-
+class BookmarkFragment : Fragment(), BookmarkFragmentCallback {
+    lateinit var adapter: BookmarkAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -21,5 +24,31 @@ class BookmarkFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_bookmark, container, false)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        if (activity != null) {
+            adapter = BookmarkAdapter(activity!!, this)
+            adapter.setListCourses(generateDummyCourses())
+            rv_bookmark.layoutManager = LinearLayoutManager(context)
+            rv_bookmark.setHasFixedSize(true)
+            rv_bookmark.adapter = adapter
+        }
+    }
 
+    override fun onShareClick(course: CourseEntity) {
+        if (activity != null) {
+            val mimeType = "text/plain"
+            ShareCompat.IntentBuilder
+                .from(activity)
+                .setType(mimeType)
+                .setChooserTitle("Bagikan aplikasi ini sekarang.")
+                .setText(
+                    String.format(
+                        "Segera daftar kelas %s di dicoding.com",
+                        course.title
+                    )
+                )
+                .startChooser()
+        }
+    }
 }
