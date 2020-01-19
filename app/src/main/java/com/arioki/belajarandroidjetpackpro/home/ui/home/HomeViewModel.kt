@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.ui.home
+package com.arioki.belajarandroidjetpackpro.home.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
