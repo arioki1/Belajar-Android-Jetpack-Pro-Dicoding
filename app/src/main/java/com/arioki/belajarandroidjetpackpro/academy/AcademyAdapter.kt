@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro
+package com.arioki.belajarandroidjetpackpro.academy
 
 import android.app.Activity
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.arioki.belajarandroidjetpackpro.R
 import com.arioki.belajarandroidjetpackpro.data.CourseEntity
 import com.arioki.belajarandroidjetpackpro.detail.DetailCourseActivity
 import com.bumptech.glide.Glide
@@ -28,13 +29,15 @@ class AcademyAdapter(private val activity: Activity) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): AcademyAdapter.AcademyViewHolder {
+    ): AcademyViewHolder {
         val view: View =
             LayoutInflater.from(parent.context).inflate(R.layout.items_academy, parent, false)
-        return AcademyViewHolder(view)
+        return AcademyViewHolder(
+            view
+        )
     }
 
-    override fun onBindViewHolder(holder: AcademyAdapter.AcademyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AcademyViewHolder, position: Int) {
         holder.tvTitle.text = mCourses[position].title
         holder.tvDescription.text = mCourses[position].description
         holder.tvDate.text = String.format("Deadline %s", mCourses[position].deadline)
@@ -45,7 +48,9 @@ class AcademyAdapter(private val activity: Activity) :
         }
         Glide.with(holder.itemView.context)
             .load(mCourses[position].imagePath)
-            .apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_error))
+            .apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(
+                R.drawable.ic_error
+            ))
             .into(holder.imgPoster)
     }
 

@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro
+package com.arioki.belajarandroidjetpackpro.bookmark
 
 import android.app.Activity
 import android.content.Intent
@@ -9,7 +9,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.arioki.belajarandroidjetpackpro.bookmark.BookmarkFragmentCallback
+import com.arioki.belajarandroidjetpackpro.R
 import com.arioki.belajarandroidjetpackpro.data.CourseEntity
 import com.arioki.belajarandroidjetpackpro.detail.DetailCourseActivity
 import com.bumptech.glide.Glide
@@ -28,7 +28,9 @@ class BookmarkAdapter(private val activity: Activity, private val callback: Book
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AcademyViewHolder {
         val view: View =
             LayoutInflater.from(parent.context).inflate(R.layout.items_bookmark, parent, false)
-        return AcademyViewHolder(view)
+        return AcademyViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int = courses.size
@@ -48,7 +50,9 @@ class BookmarkAdapter(private val activity: Activity, private val callback: Book
         }
         Glide.with(holder.itemView.context)
             .load(course.imagePath)
-            .apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_error))
+            .apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(
+                R.drawable.ic_error
+            ))
             .into(holder.imgPoster);
     }
 

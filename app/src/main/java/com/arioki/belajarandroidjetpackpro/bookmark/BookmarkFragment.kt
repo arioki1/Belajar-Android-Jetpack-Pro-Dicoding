@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.arioki.belajarandroidjetpackpro.BookmarkAdapter
 import com.arioki.belajarandroidjetpackpro.R
 import com.arioki.belajarandroidjetpackpro.data.CourseEntity
 import com.arioki.belajarandroidjetpackpro.utils.DataDummy.generateDummyCourses
@@ -27,7 +26,11 @@ class BookmarkFragment : Fragment(), BookmarkFragmentCallback {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity != null) {
-            adapter = BookmarkAdapter(activity!!, this)
+            adapter =
+                BookmarkAdapter(
+                    activity!!,
+                    this
+                )
             adapter.setListCourses(generateDummyCourses())
             rv_bookmark.layoutManager = LinearLayoutManager(context)
             rv_bookmark.setHasFixedSize(true)
