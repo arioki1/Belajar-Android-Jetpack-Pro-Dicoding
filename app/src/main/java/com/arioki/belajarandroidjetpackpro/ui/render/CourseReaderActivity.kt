@@ -1,12 +1,12 @@
-package com.arioki.belajarandroidjetpackpro.render
+package com.arioki.belajarandroidjetpackpro.ui.render
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.arioki.belajarandroidjetpackpro.R
-import com.arioki.belajarandroidjetpackpro.render.content.ModuleContentFragment
-import com.arioki.belajarandroidjetpackpro.render.list.ModuleListFragment
+import com.arioki.belajarandroidjetpackpro.ui.render.content.ModuleContentFragment
+import com.arioki.belajarandroidjetpackpro.ui.render.list.ModuleListFragment
 
 
 class CourseReaderActivity : AppCompatActivity(), CourseReaderCallback {

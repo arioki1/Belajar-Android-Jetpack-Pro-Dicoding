@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.render.content
+package com.arioki.belajarandroidjetpackpro.ui.render.content
 
 
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.home
+package com.arioki.belajarandroidjetpackpro.ui.home
 
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.arioki.belajarandroidjetpackpro.R
-import com.arioki.belajarandroidjetpackpro.academy.AcademyFragment
-import com.arioki.belajarandroidjetpackpro.bookmark.BookmarkFragment
+import com.arioki.belajarandroidjetpackpro.ui.academy.AcademyFragment
+import com.arioki.belajarandroidjetpackpro.ui.bookmark.BookmarkFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 

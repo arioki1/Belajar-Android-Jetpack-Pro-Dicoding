@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.detail
+package com.arioki.belajarandroidjetpackpro.ui.detail
 
 import android.view.LayoutInflater
 import android.view.View

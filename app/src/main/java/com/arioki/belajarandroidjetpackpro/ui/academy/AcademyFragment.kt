@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.academy
+package com.arioki.belajarandroidjetpackpro.ui.academy
 
 
 import android.os.Bundle
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arioki.belajarandroidjetpackpro.R
-import com.arioki.belajarandroidjetpackpro.render.list.ModuleListFragment
 import com.arioki.belajarandroidjetpackpro.utils.DataDummy
 import kotlinx.android.synthetic.main.fragment_academy.*
 

@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.detail
+package com.arioki.belajarandroidjetpackpro.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arioki.belajarandroidjetpackpro.R
-import com.arioki.belajarandroidjetpackpro.render.CourseReaderActivity
+import com.arioki.belajarandroidjetpackpro.ui.render.CourseReaderActivity
 import com.arioki.belajarandroidjetpackpro.utils.DataDummy.generateDummyModules
 import com.arioki.belajarandroidjetpackpro.utils.DataDummy.getCourse
 import com.bumptech.glide.Glide

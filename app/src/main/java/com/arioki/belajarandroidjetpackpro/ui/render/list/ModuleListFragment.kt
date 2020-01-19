@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.render.list
+package com.arioki.belajarandroidjetpackpro.ui.render.list
 
 import android.content.Context
 import android.os.Bundle
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arioki.belajarandroidjetpackpro.R
 import com.arioki.belajarandroidjetpackpro.data.ModuleEntity
-import com.arioki.belajarandroidjetpackpro.render.CourseReaderActivity
-import com.arioki.belajarandroidjetpackpro.render.CourseReaderCallback
+import com.arioki.belajarandroidjetpackpro.ui.render.CourseReaderActivity
+import com.arioki.belajarandroidjetpackpro.ui.render.CourseReaderCallback
 import com.arioki.belajarandroidjetpackpro.utils.DataDummy
 import kotlinx.android.synthetic.main.fragment_module_list.*
 

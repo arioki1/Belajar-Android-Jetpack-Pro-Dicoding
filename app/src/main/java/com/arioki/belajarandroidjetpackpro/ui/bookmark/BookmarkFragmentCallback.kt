@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.bookmark
+package com.arioki.belajarandroidjetpackpro.ui.bookmark
 
 import com.arioki.belajarandroidjetpackpro.data.CourseEntity
 

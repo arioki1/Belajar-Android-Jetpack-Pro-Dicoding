@@ -1,4 +1,4 @@
-package com.arioki.belajarandroidjetpackpro.academy
+package com.arioki.belajarandroidjetpackpro.ui.academy
 
 import android.app.Activity
 import android.content.Intent
@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.arioki.belajarandroidjetpackpro.R
 import com.arioki.belajarandroidjetpackpro.data.CourseEntity
-import com.arioki.belajarandroidjetpackpro.detail.DetailCourseActivity
+import com.arioki.belajarandroidjetpackpro.ui.detail.DetailCourseActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
