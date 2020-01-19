@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arioki.belajarandroidjetpackpro.R
-import com.arioki.belajarandroidjetpackpro.utils.DataDummy
+import com.arioki.belajarandroidjetpackpro.data.CourseEntity
 import kotlinx.android.synthetic.main.fragment_academy.*
 
 
@@ -22,6 +23,9 @@ class AcademyFragment : Fragment() {
         }
     }
 
+    private lateinit var viewModel: AcademyViewModel
+    private lateinit var courses: List<CourseEntity>
+
     private lateinit var academyAdapter: AcademyAdapter
 
     override fun onCreateView(
@@ -33,18 +37,14 @@ class AcademyFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        if (activity != null) {
-            academyAdapter =
-                AcademyAdapter(
-                    activity!!
-                )
-            academyAdapter.setListCourses(DataDummy.generateDummyCourses())
-
-            rv_academy.layoutManager = LinearLayoutManager(activity)
+        activity?.let {
+            viewModel = ViewModelProviders.of(this).get(AcademyViewModel::class.java)
+            courses = viewModel.getCourses()
+            academyAdapter = AcademyAdapter(it)
+            academyAdapter.setListCourses(courses)
+            rv_academy.layoutManager = LinearLayoutManager(it)
             rv_academy.setHasFixedSize(true)
             rv_academy.adapter = academyAdapter
-
         }
     }
-
 }
